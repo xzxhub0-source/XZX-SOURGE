@@ -1,0 +1,107 @@
+[
+  {
+    "model": "Pixel 8 Pro",
+    "manufacturer": "Google",
+    "androidVersions": ["14", "14", "14", "13"],
+    "screenResolution": "1344x2992",
+    "screenDensity": 490,
+    "processor": {
+      "name": "Google Tensor G3",
+      "cores": 8,
+      "gpu": "Mali-G715",
+      "gpuRenderer": "Mali-G715 Immortalis"
+    },
+    "ram": "12GB",
+    "storage": "256GB",
+    "fingerprintSensor": "ultrasonic",
+    "faceUnlock": true,
+    "bluetoothVersion": "5.3",
+    "wifiVersion": "WiFi 7",
+    "nfc": true,
+    "batteryCapacity": 5050
+  },
+  {
+    "model": "Galaxy S24 Ultra",
+    "manufacturer": "Samsung",
+    "androidVersions": ["14", "14", "13"],
+    "screenResolution": "1440x3120",
+    "screenDensity": 501,
+    "processor": {
+      "name": "Snapdragon 8 Gen 3",
+      "cores": 8,
+      "gpu": "Adreno 750",
+      "gpuRenderer": "Adreno 750"
+    },
+    "ram": "12GB",
+    "storage": "512GB",
+    "fingerprintSensor": "ultrasonic",
+    "faceUnlock": true,
+    "bluetoothVersion": "5.3",
+    "wifiVersion": "WiFi 7",
+    "nfc": true,
+    "batteryCapacity": 5000
+  },
+  {
+    "model": "OnePlus 12",
+    "manufacturer": "OnePlus",
+    "androidVersions": ["14", "13"],
+    "screenResolution": "1440x3216",
+    "screenDensity": 510,
+    "processor": {
+      "name": "Snapdragon 8 Gen 3",
+      "cores": 8,
+      "gpu": "Adreno 750",
+      "gpuRenderer": "Adreno 750"
+    },
+    "ram": "16GB",
+    "storage": "512GB",
+    "fingerprintSensor": "optical",
+    "faceUnlock": true,
+    "bluetoothVersion": "5.4",
+    "wifiVersion": "WiFi 7",
+    "nfc": true,
+    "batteryCapacity": 5400
+  },
+  {
+    "model": "Xiaomi 14 Pro",
+    "manufacturer": "Xiaomi",
+    "androidVersions": ["14", "14"],
+    "screenResolution": "1440x3200",
+    "screenDensity": 522,
+    "processor": {
+      "name": "Snapdragon 8 Gen 3",
+      "cores": 8,
+      "gpu": "Adreno 750",
+      "gpuRenderer": "Adreno 750"
+    },
+    "ram": "12GB",
+    "storage": "256GB",
+    "fingerprintSensor": "optical",
+    "faceUnlock": false,
+    "bluetoothVersion": "5.4",
+    "wifiVersion": "WiFi 7",
+    "nfc": true,
+    "batteryCapacity": 4880
+  },
+  {
+    "model": "iPhone 15 Pro Max",
+    "manufacturer": "Apple",
+    "iosVersions": ["17", "17", "16"],
+    "screenResolution": "1290x2796",
+    "screenDensity": 460,
+    "processor": {
+      "name": "A17 Pro",
+      "cores": 6,
+      "gpu": "Apple GPU (6-core)",
+      "gpuRenderer": "Apple A17 GPU"
+    },
+    "ram": "8GB",
+    "storage": "512GB",
+    "faceId": true,
+    "touchId": false,
+    "bluetoothVersion": "5.3",
+    "wifiVersion": "WiFi 6E",
+    "nfc": true,
+    "batteryCapacity": 4441
+  }
+]
