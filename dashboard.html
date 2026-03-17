@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>XZX SURGE · Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span>XZX</span> SURGE
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <button onclick="logout()" class="nav-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <h1>Surge Control Panel</h1>
+        <div class="header-stats">
+            <div class="mini-stat">
+                <span>BALANCE</span>
+                <strong>$49.99</strong>
+            </div>
+            <div class="mini-stat">
+                <span>ACTIVE SURGES</span>
+                <strong>3</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-grid">
+        <!-- Left Column - Input -->
+        <div class="dashboard-card">
+            <h2>New Surge</h2>
+            
+            <div class="input-group">
+                <label>YouTube URL</label>
+                <input type="text" id="videoUrl" placeholder="https://youtube.com/watch?v=..." value="https://youtube.com/watch?v=dQw4w9WgXcQ">
+            </div>
+
+            <div class="input-group">
+                <label>Service Type</label>
+                <select id="serviceType">
+                    <option value="views">Views</option>
+                    <option value="likes">Likes</option>
+                    <option value="subscribers">Subscribers</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Quantity</label>
+                <input type="range" id="quantity" min="100" max="10000" value="2500" step="100" oninput="updateQuantity()">
+                <div class="range-value" id="quantityValue">2,500</div>
+            </div>
+
+            <div class="input-group">
+                <label>Delivery Speed</label>
+                <select id="speed">
+                    <option value="slow">Slow (7-14 days) - Most Natural</option>
+                    <option value="medium" selected>Medium (3-7 days) - Balanced</option>
+                    <option value="fast">Fast (24-48 hours) - Rush</option>
+                </select>
+            </div>
+
+            <!-- Price Calculation -->
+            <div class="price-calculation">
+                <div class="price-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$25.00</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total:</span>
+                    <span id="total">$25.00</span>
+                </div>
+            </div>
+
+            <button class="surge-btn" onclick="launchSurge()">
+                LAUNCH SURGE →
+            </button>
+        </div>
+
+        <!-- Right Column - Preview & Activity -->
+        <div class="dashboard-card">
+            <h2>Video Preview</h2>
+            
+            <div class="video-preview">
+                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail" id="thumbnail">
+                <div class="video-info">
+                    <h3 id="videoTitle">Rick Astley - Never Gonna Give You Up</h3>
+                    <p id="videoStats">1.2B views · 15 years ago</p>
+                </div>
+            </div>
+
+            <div class="estimation">
+                <h3>Estimated Results</h3>
+                <div class="estimation-item">
+                    <span>Views:</span>
+                    <strong id="estViews">2,500</strong>
+                </div>
+                <div class="estimation-item">
+                    <span>Completion:</span>
+                    <strong id="estTime">March 20, 2026</strong>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-item">
+                    <span class="time">2 min ago</span>
+                    <span class="event">✅ 500 views delivered</span>
+                </div>
+                <div class="activity-item">
+                    <span class="time">15 min ago</span>
+                    <span class="event">🔄 Proxy pool rotated</span>
+                </div>
+                <div class="activity-item">
+                    <span class="time">1 hour ago</span>
+                    <span class="event">🚀 Surge #XZX-8472 started</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Surges -->
+    <div class="active-surges">
+        <h2>Your Active Surges</h2>
+        <div class="surges-list">
+            <div class="surge-item">
+                <div class="surge-info">
+                    <strong>Never Gonna Give You Up</strong>
+                    <span>2,500 views · 45% complete</span>
+                </div>
+                <div class="surge-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+                <span class="surge-status active">ACTIVE</span>
+            </div>
+            <div class="surge-item">
+                <div class="surge-info">
+                    <strong>Baby Shark Dance</strong>
+                    <span>5,000 views · 82% complete</span>
+                </div>
+                <div class="surge-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82%"></div>
+                    </div>
+                </div>
+                <span class="surge-status active">ACTIVE</span>
+            </div>
+            <div class="surge-item">
+                <div class="surge-info">
+                    <strong>Gangnam Style</strong>
+                    <span>1,000 views · 100% complete</span>
+                </div>
+                <div class="surge-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <span class="surge-status completed">COMPLETED</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoUrl = urlParams.get('url');
+        if (videoUrl && document.getElementById('videoUrl')) {
+            document.getElementById('videoUrl').value = videoUrl;
+            updateVideoPreview(videoUrl);
+        }
+
+        function updateQuantity() {
+            const qty = document.getElementById('quantity').value;
+            document.getElementById('quantityValue').textContent = parseInt(qty).toLocaleString();
+            document.getElementById('estViews').textContent = parseInt(qty).toLocaleString();
+            
+            // Update price
+            const price = (qty / 100).toFixed(2);
+            document.getElementById('subtotal').textContent = '$' + price;
+            document.getElementById('total').textContent = '$' + price;
+        }
+
+        function updateVideoPreview(url) {
+            // Extract video ID
+            let videoId = '';
+            if (url.includes('v=')) {
+                videoId = url.split('v=')[1].split('&')[0];
+            } else if (url.includes('youtu.be/')) {
+                videoId = url.split('youtu.be/')[1].split('?')[0];
+            }
+            
+            if (videoId) {
+                document.getElementById('thumbnail').src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                // In a real app, you'd fetch video title via API
+            }
+        }
+
+        function launchSurge() {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = 'PROCESSING...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('✅ Surge launched successfully! Check your email for details.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Add to activity
+                const activity = document.querySelector('.recent-activity');
+                const newItem = document.createElement('div');
+                newItem.className = 'activity-item';
+                newItem.innerHTML = '<span class="time">Just now</span><span class="event">🚀 New surge launched</span>';
+                activity.insertBefore(newItem, activity.firstChild);
+            }, 2000);
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
