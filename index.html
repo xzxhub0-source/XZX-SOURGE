@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>XZX SURGE · YouTube Growth Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span>XZX</span> SURGE
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+                <button onclick="window.location.href='dashboard.html'" class="nav-btn">Dashboard</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            LIVE · 2,847 ACTIVE SURGES
+        </div>
+        <h1>
+            <span>UNDETECTABLE</span>
+            YOUTUBE GROWTH
+        </h1>
+        <p>Get real engagement with military-grade stealth technology</p>
+        
+        <div class="url-input">
+            <input type="text" id="heroUrl" placeholder="https://youtube.com/watch?v=...">
+            <button onclick="goToDashboard()">ANALYZE →</button>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">2.8M+</div>
+                <div class="stat-label">VIEWS DELIVERED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">847</div>
+                <div class="stat-label">ACTIVE NODES</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.97%</div>
+                <div class="stat-label">SUCCESS RATE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <h2>Why Choose XZX SURGE</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Military-Grade Stealth</h3>
+                <p>Advanced anti-detection technology that mimics real user behavior</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Global Proxy Network</h3>
+                <p>12,000+ residential IPs across 149 countries</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Results start within minutes, not hours</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real-Time Analytics</h3>
+                <p>Live dashboard with detailed metrics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Paste Your URL</h3>
+                <p>Enter any YouTube video link</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Set Your Target</h3>
+                <p>Choose views, likes, or subscribers</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Launch Surge</h3>
+                <p>Watch your metrics grow naturally</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2>Simple Pricing</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$10</div>
+                <ul>
+                    <li>✓ 1,000 Views</li>
+                    <li>✓ 7-Day Delivery</li>
+                    <li>✓ Basic Support</li>
+                </ul>
+                <button onclick="window.location.href='dashboard.html'">Get Started</button>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">MOST POPULAR</div>
+                <h3>Pro</h3>
+                <div class="price">$25</div>
+                <ul>
+                    <li>✓ 5,000 Views</li>
+                    <li>✓ 3-Day Delivery</li>
+                    <li>✓ Priority Support</li>
+                    <li>✓ Real-Time Tracking</li>
+                </ul>
+                <button onclick="window.location.href='dashboard.html'" class="popular-btn">Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Business</h3>
+                <div class="price">$50</div>
+                <ul>
+                    <li>✓ 15,000 Views</li>
+                    <li>✓ 24-Hour Delivery</li>
+                    <li>✓ VIP Support</li>
+                    <li>✓ API Access</li>
+                </ul>
+                <button onclick="window.location.href='dashboard.html'">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 XZX SURGE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goToDashboard() {
+            const url = document.getElementById('heroUrl').value;
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                window.location.href = 'dashboard.html?url=' + encodeURIComponent(url);
+            } else {
+                alert('Please enter a valid YouTube URL');
+            }
+        }
+    </script>
+</body>
+</html>
